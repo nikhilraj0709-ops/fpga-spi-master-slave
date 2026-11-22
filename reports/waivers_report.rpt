@@ -1,0 +1,44 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Sun Nov 22 14:03:59 2026
+| Host         : RICHARANI running 64-bit major release  (build 9200)
+| Command      : report_waivers -file C:/SPI_PROJECT/spi_industrial_project/waivers_report.rpt
+| Design       : spi_board_top
+| Device       : 7s50csga324-1
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Waiver Report
+
+
+-----------------
+Table Of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS (DRC: no waivers)
+3. REPORT DETAILS (METHODOLOGY)
+4. REPORT DETAILS (CDC: no waivers)
+
+
+-----------------
+1. REPORT SUMMARY
+-----------------
+Waiver Type  Total Vios  Remaining Vios  Waived Vios  Used Waivers  Set Waivers
+-----------  ----------  --------------  -----------  ------------  -----------
+DRC          0           0               0            0             0
+METHODOLOGY  34          0               34           34            34
+CDC          0           0               0            0             0
+Note: This report is based on the most recent report_drc/report_methodology/report_cdc/linter runs.
+
+
+--------------------------------
+3. REPORT DETAILS (METHODOLOGY)
+--------------------------------
+Rule       Severity  Description                    Total Vios  Remaining Vios  Waived Vios  Used Waivers  Set Waivers
+---------  --------  -----------------------------  ----------  --------------  -----------  ------------  -----------
+TIMING-18  Warning   Missing input or output delay  34          0               34           34            34
+
+Note: Any 'Rule' which is flagged by '*' is an aggregating message and its counts are based on the number of objects represented,
+      rather than the number of messages.
+
