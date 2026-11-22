@@ -296,3 +296,71 @@ All tested patterns successfully completed bidirectional SPI data transfer on th
 
 ---
 
+
+## Project Structure
+
+```text
+fpga-spi-master-slave/
+|
+|-- rtl/
+|   |-- spi_master.sv
+|   |-- spi_slave.sv
+|   |-- spi_top.sv
+|   -- spi_board_top.sv
+|
+|-- tb/
+|   |-- spi_tb.sv
+|   |-- spi_assertions.sv
+|   -- spi_coverage.sv
+|
+|-- constraints/
+|   -- spi_board.xdc
+|
+|-- docs/
+|   |-- architecture.png
+|   |-- hardware_validation.md
+|   |-- verification_summary.md
+|   -- board_demo/
+|
+|-- reports/
+|-- scripts/
+|-- .gitignore
+|-- LICENSE
+`-- README.md
+```
+
+## How to Run
+
+### 1. RTL Simulation
+
+Use the RTL files in `rtl/` together with the verification files in `tb/`.
+
+Simulation top: `spi_tb`
+
+The verification environment includes directed and randomized transactions, assertions, functional coverage, and end-to-end data checking.
+
+### 2. RTL Lint
+
+Run: `scripts/run_spi_lint.tcl`
+
+### 3. Synthesis and Implementation
+
+Run: `scripts/run_spi_impl.tcl`
+
+This flow performs synthesis, implementation, timing analysis, methodology checks, and DRC reporting.
+
+### 4. Final Signoff
+
+Run: `scripts/run_spi_final.tcl`
+
+This generates final timing, DRC, power reports, and the FPGA bitstream.
+
+### 5. Hardware Test
+
+- Set `SW[7:0]` as Master TX data.
+- Set `SW[15:8]` as Slave TX data.
+- Press `BTN0` for reset.
+- Press `BTN1` to start the SPI transaction.
+- Observe received bytes on `LED[7:0]` and `LED[15:8]`.
+
+---
