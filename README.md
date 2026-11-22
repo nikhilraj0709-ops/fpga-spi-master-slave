@@ -364,3 +364,19 @@ This generates final timing, DRC, power reports, and the FPGA bitstream.
 - Observe received bytes on `LED[7:0]` and `LED[15:8]`.
 
 ---
+
+## Key Results
+
+| Metric | Result |
+|--------|--------|
+| Functional checks | 270 / 270 PASS |
+| Functional coverage | 100% |
+| RTL lint violations | 0 |
+| DRC errors | 0 |
+| Active methodology checks | 0 |
+| Post-route timing | PASS |
+| FPGA hardware validation | PASS |
+| Hardware test patterns | A5/3C, 55/AA, FF/00, 00/FF, FF/FF |
+| Total on-chip power | 0.073 W |
+
+---
