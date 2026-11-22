@@ -221,6 +221,34 @@ The design successfully passed:
 SystemVerilog, RTL Design, SPI Protocol, FPGA Design, CDC, Reset Design, Functional Verification, Assertions, Functional Coverage, AMD Vivado, Static Timing Analysis, DRC, Methodology Analysis, FPGA Hardware Validation.
 
 
+## Verification Evidence
+
+### SPI Waveform Verification
+
+Representative full-duplex SPI transaction:
+
+![Single SPI Transaction](docs/verification/single_transaction_waveform.png)
+
+Directed test sequence covering multiple data patterns:
+
+![Directed Test Overview](docs/verification/directed_test_overview.png)
+
+Coverage-closure regression waveform:
+
+![Coverage Closure Waveform](docs/verification/coverage_closure_waveform.png)
+
+### Regression, Coverage, and Assertions
+
+The SystemVerilog verification environment completed **270/270 checks with zero failures**, achieved **100% functional coverage**, and completed all protocol assertions with **0 assertion failures**.
+
+![Verification Summary](docs/verification/verification_summary.png)
+
+![Assertion Summary](docs/verification/assertion_summary.png)
+
+Verification components:
+- [`tb/spi_tb.sv`](tb/spi_tb.sv) - directed, random, and coverage-closure tests
+- [`tb/spi_assertions.sv`](tb/spi_assertions.sv) - protocol and transaction assertions
+- [`tb/spi_coverage.sv`](tb/spi_coverage.sv) - functional coverage model
 ## Hardware Validation Gallery
 
 The design was validated on the Real Digital Boolean Board using multiple transmit patterns to verify full-duplex SPI communication on physical FPGA hardware.
@@ -327,4 +355,5 @@ This generates final timing, DRC, power reports, and the FPGA bitstream.
 | Total on-chip power | 0.073 W |
 
 ---
+
 
