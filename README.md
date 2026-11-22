@@ -276,54 +276,23 @@ flowchart LR
 
 ## Hardware Validation Gallery
 
-The design was validated on a Real Digital Boolean Board using multiple transmit patterns to verify full-duplex SPI communication on physical FPGA hardware.
+The design was validated on the Real Digital Boolean Board using multiple transmit patterns to verify full-duplex SPI communication on physical FPGA hardware.
 
-### Test 1 ? Master TX = A5, Slave TX = 3C
+<table>
+<tr>
+<td align="center"><b>A5 / 3C</b><br><img src="docs/board_demo/test_A5_3C.jpg" width="430"><br>Slave RX = A5 | Master RX = 3C<br><b>PASS</b></td>
+<td align="center"><b>55 / AA</b><br><img src="docs/board_demo/test_55_AA.jpg" width="430"><br>Slave RX = 55 | Master RX = AA<br><b>PASS</b></td>
+</tr>
+<tr>
+<td align="center"><b>FF / 00</b><br><img src="docs/board_demo/test_FF_00.jpg" width="430"><br>Slave RX = FF | Master RX = 00<br><b>PASS</b></td>
+<td align="center"><b>00 / FF</b><br><img src="docs/board_demo/test_00_FF.jpg" width="430"><br>Slave RX = 00 | Master RX = FF<br><b>PASS</b></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><b>FF / FF</b><br><img src="docs/board_demo/test_FF_FF.jpg" width="430"><br>Slave RX = FF | Master RX = FF<br><b>PASS</b></td>
+</tr>
+</table>
 
-![A5 3C Hardware Test](docs/board_demo/test_A5_3C.jpg)
-
-**Observed Result:**  
-- Slave RX = A5  
-- Master RX = 3C  
-- Status: **PASS**
-
-### Test 2 ? Master TX = 55, Slave TX = AA
-
-![55 AA Hardware Test](docs/board_demo/test_55_AA.jpg)
-
-**Observed Result:**  
-- Slave RX = 55  
-- Master RX = AA  
-- Status: **PASS**
-
-### Test 3 ? Master TX = FF, Slave TX = 00
-
-![FF 00 Hardware Test](docs/board_demo/test_FF_00.jpg)
-
-**Observed Result:**  
-- Slave RX = FF  
-- Master RX = 00  
-- Status: **PASS**
-
-### Test 4 ? Master TX = 00, Slave TX = FF
-
-![00 FF Hardware Test](docs/board_demo/test_00_FF.jpg)
-
-**Observed Result:**  
-- Slave RX = 00  
-- Master RX = FF  
-- Status: **PASS**
-
-### Test 5 ? Master TX = FF, Slave TX = FF
-
-![FF FF Hardware Test](docs/board_demo/test_FF_FF.jpg)
-
-**Observed Result:**  
-- Slave RX = FF  
-- Master RX = FF  
-- Status: **PASS**
+All tested patterns successfully completed bidirectional SPI data transfer on the physical Spartan-7 FPGA board.
 
 ---
-
-
 
