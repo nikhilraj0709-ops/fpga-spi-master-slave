@@ -31,3 +31,4 @@ Thumbs.db
 
 # Reproducible local Vivado build
 build/
+desktop.ini
