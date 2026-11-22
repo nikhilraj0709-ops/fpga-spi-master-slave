@@ -273,7 +273,7 @@ flowchart LR
 
 The design was validated on a Real Digital Boolean Board using multiple transmit patterns to verify full-duplex SPI communication on physical FPGA hardware.
 
-### Test 1 — Master TX = A5, Slave TX = 3C
+### Test 1 ? Master TX = A5, Slave TX = 3C
 
 ![A5 3C Hardware Test](docs/board_demo/test_A5_3C.jpg)
 
@@ -282,7 +282,7 @@ The design was validated on a Real Digital Boolean Board using multiple transmit
 - Master RX = 3C  
 - Status: **PASS**
 
-### Test 2 — Master TX = 55, Slave TX = AA
+### Test 2 ? Master TX = 55, Slave TX = AA
 
 ![55 AA Hardware Test](docs/board_demo/test_55_AA.jpg)
 
@@ -291,7 +291,7 @@ The design was validated on a Real Digital Boolean Board using multiple transmit
 - Master RX = AA  
 - Status: **PASS**
 
-### Test 3 — Master TX = FF, Slave TX = 00
+### Test 3 ? Master TX = FF, Slave TX = 00
 
 ![FF 00 Hardware Test](docs/board_demo/test_FF_00.jpg)
 
@@ -300,7 +300,7 @@ The design was validated on a Real Digital Boolean Board using multiple transmit
 - Master RX = 00  
 - Status: **PASS**
 
-### Test 4 — Master TX = 00, Slave TX = FF
+### Test 4 ? Master TX = 00, Slave TX = FF
 
 ![00 FF Hardware Test](docs/board_demo/test_00_FF.jpg)
 
@@ -309,7 +309,7 @@ The design was validated on a Real Digital Boolean Board using multiple transmit
 - Master RX = FF  
 - Status: **PASS**
 
-### Test 5 — Master TX = FF, Slave TX = FF
+### Test 5 ? Master TX = FF, Slave TX = FF
 
 ![FF FF Hardware Test](docs/board_demo/test_FF_FF.jpg)
 
@@ -319,4 +319,5 @@ The design was validated on a Real Digital Boolean Board using multiple transmit
 - Status: **PASS**
 
 ---
+
 
