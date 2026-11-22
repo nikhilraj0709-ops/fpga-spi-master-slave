@@ -1,13 +1,12 @@
-open_project "C:/SPI_PROJECT/spi_industrial_project/spi_industrial_project.xpr"
-
-set_property top spi_board_top [current_fileset]
-update_compile_order -fileset sources_1
+set script_dir [file dirname [file normalize [info script]]]
+source [file join $script_dir "create_project.tcl"]
 
 synth_design -top spi_board_top -part xc7s50csga324-1 -lint
 
 puts ""
 puts "=========================================="
-puts "SPI BOARD RTL LINT COMPLETED"
+puts "SPI RTL LINT COMPLETED"
 puts "=========================================="
 
+close_project
 exit

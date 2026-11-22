@@ -221,59 +221,6 @@ The design successfully passed:
 SystemVerilog, RTL Design, SPI Protocol, FPGA Design, CDC, Reset Design, Functional Verification, Assertions, Functional Coverage, AMD Vivado, Static Timing Analysis, DRC, Methodology Analysis, FPGA Hardware Validation.
 
 
-## Architecture
-
-`mermaid
-flowchart LR
-
-    SW["SW[15:0]<br/>TX Data Inputs"]
-    BTN0["BTN0<br/>Reset"]
-    BTN1["BTN1<br/>Start"]
-
-    subgraph WRAPPER["FPGA Board Interface"]
-        SYNC["2-FF Input<br/>Synchronizers"]
-        RESET["Reset Synchronizer<br/>Async Assert / Sync Release"]
-        DEB["Button Synchronizer<br/>+ Debounce + Pulse"]
-        CAP["Transaction<br/>Data Capture"]
-    end
-
-    subgraph CORE["SPI Core"]
-        MASTER["SPI Master<br/>8-bit Full Duplex"]
-        SLAVE["SPI Slave<br/>System-Clock Based<br/>SCLK Edge Detection"]
-    end
-
-    LEDS["LED[15:0]<br/>Received Data"]
-
-    SW --> SYNC --> CAP
-    BTN0 --> RESET
-    BTN1 --> DEB
-
-    RESET --> MASTER
-    RESET --> SLAVE
-    DEB --> MASTER
-    CAP --> MASTER
-    CAP --> SLAVE
-
-    MASTER -- "MOSI" --> SLAVE
-    SLAVE -- "MISO" --> MASTER
-    MASTER -- "SCLK" --> SLAVE
-    MASTER -- "CS_N" --> SLAVE
-
-    MASTER --> LEDS
-    SLAVE --> LEDS
-`",
-",
-
-
-- SW[7:0] provides the Master transmit byte.
-- SW[15:8] provides the Slave transmit byte.
-- BTN0 performs reset.
-- BTN1 starts one SPI transaction.
-- LED[7:0] displays the byte received by the Slave.
-- LED[15:8] displays the byte received by the Master.
-
----
-
 ## Hardware Validation Gallery
 
 The design was validated on the Real Digital Boolean Board using multiple transmit patterns to verify full-duplex SPI communication on physical FPGA hardware.
@@ -380,3 +327,4 @@ This generates final timing, DRC, power reports, and the FPGA bitstream.
 | Total on-chip power | 0.073 W |
 
 ---
+

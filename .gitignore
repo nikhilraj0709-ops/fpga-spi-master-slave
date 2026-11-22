@@ -28,3 +28,6 @@ Thumbs.db
 .vscode/
 *.swp
 *.tmp
+
+# Reproducible local Vivado build
+build/

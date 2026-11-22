@@ -1,21 +1,20 @@
-open_project "C:/SPI_PROJECT/spi_industrial_project/spi_industrial_project.xpr"
+set script_dir [file dirname [file normalize [info script]]]
+set repo_root [file normalize [file join $script_dir ".."]]
+set report_dir [file join $repo_root "reports"]
 
-set_property top spi_board_top [current_fileset]
-update_compile_order -fileset sources_1
+source [file join $script_dir "create_project.tcl"]
 
-reset_run synth_1
-launch_runs synth_1 -jobs 2
+launch_runs synth_1 -jobs 4
 wait_on_run synth_1
 
-reset_run impl_1
-launch_runs impl_1 -to_step route_design -jobs 2
+launch_runs impl_1 -to_step route_design -jobs 4
 wait_on_run impl_1
 
 open_run impl_1
 
-report_timing_summary -file "C:/SPI_PROJECT/spi_industrial_project/timing_summary.rpt"
-report_methodology    -file "C:/SPI_PROJECT/spi_industrial_project/methodology.rpt"
-report_drc            -file "C:/SPI_PROJECT/spi_industrial_project/drc.rpt"
+report_timing_summary -file [file join $report_dir "timing_summary.rpt"]
+report_methodology -file [file join $report_dir "methodology.rpt"]
+report_drc -file [file join $report_dir "drc.rpt"]
 
 puts ""
 puts "=========================================="
