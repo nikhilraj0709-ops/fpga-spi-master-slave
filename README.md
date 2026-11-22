@@ -13,6 +13,11 @@
 
 ---
 
+
+## Architecture Overview
+
+![SPI Master-Slave FPGA Architecture](docs/architecture.png)
+
 ## Project Highlights
 
 - **8-bit full-duplex SPI Master-Slave architecture**
@@ -319,5 +324,6 @@ The design was validated on a Real Digital Boolean Board using multiple transmit
 - Status: **PASS**
 
 ---
+
 
 
